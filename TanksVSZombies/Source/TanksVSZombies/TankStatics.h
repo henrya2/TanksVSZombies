@@ -3,7 +3,6 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "TankStatics.generated.h"
 
-
 UCLASS()
 class UTankStatics : public UBlueprintFunctionLibrary
 {
