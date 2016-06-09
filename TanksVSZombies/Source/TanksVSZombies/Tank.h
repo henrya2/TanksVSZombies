@@ -17,10 +17,18 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tank Input")
 	FVector2D MovementInput;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tank Input")
+	uint32 bFire1 : 1;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tank Input")
+	uint32 bFire2 : 1;
+
 	void Sanitize();
 
 	void MoveX(float AxisValue);
 	void MoveY(float AxisValue);
+	void Fire1(bool bPressed);
+	void Fire2(bool bPressed);
 
 private:
 	// Private because it's internal, raw data. Game code should never see this.
@@ -45,10 +53,17 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
+	const FTankInput& GetCurrentInput() const { return TankInput; }
+
 protected:
 	void MoveX(float Value);
 
 	void MoveY(float Value);
+
+	void Fire1Pressed();
+	void Fire1Released();
+	void Fire2Pressed();
+	void Fire2Released();
 
 protected:
 	// Helpful debug tool - which way is the tank facing?

@@ -13,7 +13,7 @@ public:
 
 	/** Calculate angle difference in the range [-180, 180]. */
 	UFUNCTION(BlueprintCallable, Category = "Math")
-	static float FindDeltaAngleDegree(float A1, float A2);
+	static float FindDeltaAngleDegrees(float A1, float A2);
 
 	/** Finds the angle between two 2D Points */
 	UFUNCTION(BlueprintPure, Category = "Math|Rotator", meta = (Keywords = "rotation rotate"))

@@ -6,7 +6,7 @@ UTankStatics::UTankStatics()
 
 }
 
-float UTankStatics::FindDeltaAngleDegree(float A1, float A2)
+float UTankStatics::FindDeltaAngleDegrees(float A1, float A2)
 {
 	// Find the difference
 	float Delta = A2 - A1;
@@ -25,7 +25,7 @@ float UTankStatics::FindDeltaAngleDegree(float A1, float A2)
 
 bool UTankStatics::FindLookAtAngle2D(const FVector2D& Start, const FVector2D& Target, float& Angle)
 {
-	FVector2D Normal = (Target - Start).GetSafeNormal();
+	FVector2D Normal = (Target - Start);
 	if (!Normal.IsNearlyZero())
 	{
 		Angle = FMath::RadiansToDegrees(FMath::Atan2(Normal.Y, Normal.X));
