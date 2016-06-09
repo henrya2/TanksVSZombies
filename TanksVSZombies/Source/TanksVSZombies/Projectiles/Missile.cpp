@@ -23,6 +23,8 @@ AMissile::AMissile()
 
 	ExplosionFlipbook = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("ExplosionFlipbook"));
 	ExplosionFlipbook->SetupAttachment(MissileSprite);
+	ExplosionFlipbook->bAutoActivate = false;
+	ExplosionFlipbook->Stop();
 }
 
 void AMissile::BeginPlay()
