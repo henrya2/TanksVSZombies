@@ -74,6 +74,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tank", meta = (AllowPrivateAccess = "true"))
 	class UPaperSpriteComponent* TankSprite;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tank", meta = (AllowPrivateAccess = "true"))
+	class UCapsuleComponent* Capsule;
+
 	// The actor used as the turret.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tank", meta = (AllowPrivateAccess = "true"))
 	UChildActorComponent* ChildTurret;

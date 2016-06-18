@@ -48,6 +48,10 @@ ATank::ATank()
 	TankSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("TankSprite"));
 	TankSprite->SetupAttachment(TankDirection);
 
+	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
+	Capsule->SetupAttachment(GetRootComponent());
+	Capsule->SetCollisionProfileName(TEXT("Pawn"));
+
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->TargetArmLength = 500.0f;
 	SpringArm->bEnableCameraLag = true;
